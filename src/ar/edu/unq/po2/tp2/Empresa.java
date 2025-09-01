@@ -13,8 +13,48 @@ public class Empresa {
 		this.CUIT = CUIT;
 	}
 	
+	
 	public void contratarEmpleado(Empleado emp) {
 		this.empleados.add(emp); 
+	}
+	
+	
+	public float totalSueldoNeto() {
+		float total = 0;
+		for (Empleado emp: empleados) {
+			total += emp.sueldoNeto();
+		}
+		return total;
+	}
+	
+	
+	public float totalSueldoBruto() {
+		float total = 0;
+		for (Empleado emp: empleados) {
+			total += emp.sueldoBruto();
+		}
+		return total;
+	}
+	
+	
+	public float totalRetenciones() {
+		float total = 0;
+		for (Empleado emp: empleados) {
+			total += emp.retencionesTotal();
+		}
+		return total;
+	}
+	
+	
+	public Recibo generarRecibo(Empleado empleado) {
+		return empleado.generarRecibo();
+	}
+	
+	
+	public void liquidacionSueldos() {
+		for (Empleado emp: empleados) {
+			recibos.add(this.generarRecibo(emp));
+		}
 	}
 	
 	public String getNombre() {

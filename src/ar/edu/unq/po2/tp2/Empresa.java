@@ -1,4 +1,5 @@
 package ar.edu.unq.po2.tp2;
+import ar.edu.unq.po2.tp2.*;
 import java.util.*;
 
 public class Empresa {

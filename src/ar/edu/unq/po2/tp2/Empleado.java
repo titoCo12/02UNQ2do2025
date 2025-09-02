@@ -26,13 +26,27 @@ public abstract class Empleado {
 	}
 	
 	
+	public Recibo generarRecibo() {
+		Recibo nuevoRecibo = new Recibo(this.getNombre(), this.getDireccion(), 
+				this.getFechaNacimiento(), this.sueldoBruto(), this.sueldoNeto());
+		
+		nuevoRecibo.agregarConcepto(new Concepto("Sueldo Basico", this.getSueldoBasico()));
+		nuevoRecibo.agregarConcepto(new Concepto("Obra social", this.obraSocial()));
+		nuevoRecibo.agregarConcepto(new Concepto("Aportes jubilatorios", this.aportesJubilatorios()));
+		this.agregarDesgloseConceptos(nuevoRecibo);
+		
+		return nuevoRecibo;
+	}
+	
+	
+	public abstract void agregarDesgloseConceptos(Recibo recibo);
+	
 	public abstract float sueldoBruto();
 	
 	public abstract float obraSocial();
 	
 	public abstract float aportesJubilatorios();
 	
-	public abstract Recibo generarRecibo();
 	
 	
 	public float retencionesTotal() {

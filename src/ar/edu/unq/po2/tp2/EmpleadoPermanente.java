@@ -17,18 +17,10 @@ public class EmpleadoPermanente extends Empleado{
 	
 
 	@Override
-	public Recibo generarRecibo() {
-		Recibo nuevoRecibo = new Recibo(this.getNombre(), this.getDireccion(), 
-				this.getFechaNacimiento(), this.sueldoBruto(), this.sueldoNeto());
-		
-		nuevoRecibo.agregarConcepto(new Concepto("Sueldo Basico", this.getSueldoBasico()));
-		
-		// Dividir este metodo en llamar a un primer metodo "armarBase" que devuelva 
-		//el nuevoRecibo y despues en cada subclase agregar los respectivos conceptos en
-		// un metodo llamado "agregarConceptos"
-		
-		
-		return nuevoRecibo;
+	public void agregarDesgloseConceptos(Recibo recibo) {
+		recibo.agregarConcepto(new Concepto("Salario familiar", this.salarioFamiliar()));
+		recibo.agregarConcepto(new Concepto("Asignacion por hijo", this.asignacionPorHijo()));
+		recibo.agregarConcepto(new Concepto("Asignacion por conyuge", this.asignacionPorConyuge()));
 	}
 	
 	
@@ -44,11 +36,22 @@ public class EmpleadoPermanente extends Empleado{
 	}
 	
 	
-	public float salarioFamiliar() {
-		float total = this.cantHijos * 150;
+	public float asignacionPorHijo() {
+		return 150 * this.cantHijos;
+	}
+	
+	
+	public float asignacionPorConyuge() {
 		if (this.getEsConyuge()) {
-			total += 100;
+			return 100;
 		}
+		else { return 0;}
+	}
+	
+	
+	public float salarioFamiliar() {
+		float total = this.asignacionPorHijo();
+		total += this.asignacionPorConyuge();
 		total += this.antiguedad * 50;
 		return total;
 	}

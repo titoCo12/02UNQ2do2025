@@ -10,9 +10,10 @@ public abstract class Empleado {
 	private String direccion;
 	private Boolean esConyuge;
 	private LocalDate fechaNacimiento;
-	private float sueldoBasico;
+	private double sueldoBasico;
 	
-	public Empleado(String nombre, String direccion, Boolean esConyuge, LocalDate fechaNacimiento, float sueldoBasico) {
+	public Empleado(String nombre, String direccion, Boolean esConyuge, 
+			LocalDate fechaNacimiento, double sueldoBasico) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.esConyuge = esConyuge;
@@ -41,20 +42,20 @@ public abstract class Empleado {
 	
 	public abstract void agregarDesgloseConceptos(Recibo recibo);
 	
-	public abstract float sueldoBruto();
+	public abstract double sueldoBruto();
 	
-	public abstract float obraSocial();
+	public abstract double obraSocial();
 	
-	public abstract float aportesJubilatorios();
+	public abstract double aportesJubilatorios();
 	
 	
 	
-	public float retencionesTotal() {
+	public double retencionesTotal() {
 		return this.obraSocial() + this.aportesJubilatorios();
 	}
 	
 	
-	public float sueldoNeto() {
+	public double sueldoNeto() {
 		return this.sueldoBruto() - this.retencionesTotal();
 	}
 	
@@ -75,7 +76,7 @@ public abstract class Empleado {
 		return this.fechaNacimiento;
 	}
 	
-	public float getSueldoBasico() {
+	public double getSueldoBasico() {
 		return this.sueldoBasico;
 	}
 	

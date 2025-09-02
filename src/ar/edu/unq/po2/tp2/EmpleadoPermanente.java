@@ -9,7 +9,7 @@ public class EmpleadoPermanente extends Empleado{
 	private int antiguedad;
 	
 	public EmpleadoPermanente(String nombre, String direccion, Boolean esConyuge, 
-			LocalDate fechaNacimiento, float sueldoBasico, int cantHijos, int antiguedad) {
+			LocalDate fechaNacimiento, double sueldoBasico, int cantHijos, int antiguedad) {
 		super(nombre, direccion, esConyuge, fechaNacimiento, sueldoBasico);
 		this.cantHijos = cantHijos;
 		this.antiguedad = antiguedad;
@@ -25,23 +25,23 @@ public class EmpleadoPermanente extends Empleado{
 	
 	
 	@Override
-	public float aportesJubilatorios() {
+	public double aportesJubilatorios() {
 		return (15/100) * this.sueldoBruto();
 	}
 	
 	
 	@Override
-	public float obraSocial() {
+	public double obraSocial() {
 		return ((10/100) * this.sueldoBruto()) * this.cantHijos;
 	}
 	
 	
-	public float asignacionPorHijo() {
+	public double asignacionPorHijo() {
 		return 150 * this.cantHijos;
 	}
 	
 	
-	public float asignacionPorConyuge() {
+	public double asignacionPorConyuge() {
 		if (this.getEsConyuge()) {
 			return 100;
 		}
@@ -49,8 +49,8 @@ public class EmpleadoPermanente extends Empleado{
 	}
 	
 	
-	public float salarioFamiliar() {
-		float total = this.asignacionPorHijo();
+	public double salarioFamiliar() {
+		double total = this.asignacionPorHijo();
 		total += this.asignacionPorConyuge();
 		total += this.antiguedad * 50;
 		return total;
@@ -58,8 +58,8 @@ public class EmpleadoPermanente extends Empleado{
 	
 	
 	@Override
-	public float sueldoBruto() {
-		float total = this.getSueldoBasico();
+	public double sueldoBruto() {
+		double total = this.getSueldoBasico();
 		total += this.salarioFamiliar();
 		return total;
 	}

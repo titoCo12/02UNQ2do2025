@@ -5,9 +5,9 @@ import ar.edu.unq.po2.tp2.*;
 public class Concepto {
 
 	private String nombre;
-	private Float valor;
+	private double valor;
 	
-	public Concepto(String nombre, Float valor) {
+	public Concepto(String nombre, double valor) {
 		this.nombre = nombre;
 		this.valor = valor;
 	}
@@ -16,7 +16,7 @@ public class Concepto {
 		return this.nombre;
 	}
 	
-	public Float getValor() {
+	public double getValor() {
 		return this.valor;
 	}
 	

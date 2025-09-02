@@ -20,8 +20,8 @@ public class Empresa {
 	}
 	
 	
-	public float totalSueldoNeto() {
-		float total = 0;
+	public double totalSueldoNeto() {
+		double total = 0;
 		for (Empleado emp: empleados) {
 			total += emp.sueldoNeto();
 		}
@@ -29,8 +29,8 @@ public class Empresa {
 	}
 	
 	
-	public float totalSueldoBruto() {
-		float total = 0;
+	public double totalSueldoBruto() {
+		double total = 0;
 		for (Empleado emp: empleados) {
 			total += emp.sueldoBruto();
 		}
@@ -38,8 +38,8 @@ public class Empresa {
 	}
 	
 	
-	public float totalRetenciones() {
-		float total = 0;
+	public double totalRetenciones() {
+		double total = 0;
 		for (Empleado emp: empleados) {
 			total += emp.retencionesTotal();
 		}

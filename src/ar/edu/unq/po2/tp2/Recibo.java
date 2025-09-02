@@ -9,12 +9,13 @@ public class Recibo {
 	private String nombreEmpleado;
 	private String direccion;
 	private LocalDate fechaEmision;
-	private float sueldoBruto;
-	private float sueldoNeto;
+	private double sueldoBruto;
+	private double sueldoNeto;
 	private List<Concepto> conceptos;
 
 	
-	public Recibo(String nombreEmpleado, String direccion, LocalDate fechaEmision, float sueldoBruto, float sueldoNeto) {
+	public Recibo(String nombreEmpleado, String direccion, LocalDate fechaEmision, 
+			double sueldoBruto, double sueldoNeto) {
 		this.nombreEmpleado = nombreEmpleado;
 		this.direccion = direccion;
 		this.fechaEmision = fechaEmision;
@@ -40,11 +41,11 @@ public class Recibo {
 		return this.fechaEmision;
 	}
 	
-	public float sueldoBruto() {
+	public double sueldoBruto() {
 		return this.sueldoBruto;
 	}
 	
-	public float sueldoNeto() {
+	public double sueldoNeto() {
 		return this.sueldoNeto;
 	}
 	

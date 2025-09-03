@@ -25,16 +25,13 @@ public class EmpleadoContratado extends Empleado {
 	}
 	
 	
+	@Override
 	public double sueldoBruto() {
 		return this.getSueldoBasico();
 	}
 	
 	
-	public double sueldoNeto() {
-		return this.sueldoBruto() - this.gastosContractuales();
-	}
-	
-	
+	@Override
 	public void agregarDesgloseConceptos(Recibo recibo) {
 		recibo.agregarConcepto(new Concepto("Gastos administrativos contractuales", 
 				this.gastosContractuales()));
@@ -45,10 +42,12 @@ public class EmpleadoContratado extends Empleado {
 		return 50;
 	}
 	
+	@Override
 	public double obraSocial() {
 		return 0;
 	}
 	
+	@Override
 	public double aportesJubilatorios() {
 		return 0;
 	}

@@ -19,6 +19,12 @@ public class EmpleadoContratado extends Empleado {
 	}
 	
 	
+	@Override
+	public double retencionesTotal() {
+		return this.gastosContractuales();
+	}
+	
+	
 	public double sueldoBruto() {
 		return this.getSueldoBasico();
 	}

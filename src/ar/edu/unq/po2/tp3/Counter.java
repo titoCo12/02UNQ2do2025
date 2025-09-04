@@ -7,6 +7,8 @@ public class Counter {
 	private ArrayList<Integer> numeros = new ArrayList<Integer>();
 	
 	
+	// EJERCICIO 1 ------------------------------------------------------------
+	
 	public void agregarNum(Integer num) {
 		this.numeros.add(num);
 	}
@@ -50,6 +52,9 @@ public class Counter {
 	}
 	
 	
+	// EJERCICIO 2 ------------------------------------------------------------
+	
+	
 	public Integer contarDigitosPares(Integer n) {
 		
 		Integer count = 0;
@@ -78,6 +83,28 @@ public class Counter {
 		return curr;
 	}
 	
+	
+	// EJERCICIO 3 ------------------------------------------------------------ 
+	
+	
+	public Integer multiploMasGrandeDe(Integer x, Integer y) {
+		
+		Integer max = -1;
+		Integer curr = 1;
+		
+		while(curr != 1001) {
+			if ((curr % x == 0) && (curr % y == 0)) {
+				max = curr;
+			}
+			curr++;
+		}
+		
+		return max;
+	}
+	
+	
+	// EJERCICIO 4 ------------------------------------------------------------ 
+
 	
 	
 }

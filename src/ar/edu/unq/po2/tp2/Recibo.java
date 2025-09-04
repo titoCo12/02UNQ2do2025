@@ -11,7 +11,7 @@ public class Recibo {
 	private LocalDate fechaEmision;
 	private double sueldoBruto;
 	private double sueldoNeto;
-	private List<Concepto> conceptos;
+	private ArrayList<Concepto> conceptos;
 
 	
 	public Recibo(String nombreEmpleado, String direccion, LocalDate fechaEmision, 
@@ -21,6 +21,8 @@ public class Recibo {
 		this.fechaEmision = fechaEmision;
 		this.sueldoBruto = sueldoBruto;
 		this.sueldoNeto = sueldoNeto;
+		
+		this.conceptos = new ArrayList<>();
 	}
 	
 	

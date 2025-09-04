@@ -4,7 +4,6 @@ import ar.edu.unq.po2.tp2.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,11 +16,11 @@ public class tp2Test {
 	 * SetUp
 	 * */
 	
-	
+	@BeforeEach
 	public void SetUp() throws Exception{
 		
 		EmpleadoPermanente marcos = new EmpleadoPermanente("Marcos", "Quilmes", true, 
-				LocalDate.of(2004, 06, 15), 2000.0, 2, 10);
+				LocalDate.of(2004, 06, 15), 2000.0, 10, 2);
 		
 		EmpleadoTemporal ariel = new EmpleadoTemporal("Ariel", "Varela", false, 
 				LocalDate.of(2020, 07, 10), 1200.0, LocalDate.of(2021, 02, 01), 3);
@@ -45,8 +44,16 @@ public class tp2Test {
 	@Test
 	public void testCalcularTotalDeNeto() {
 		
+		/* Totales esperados de cada empleado
+		 *  
+		 * Marcos: 2135
+		 * Ariel:
+		 * Maria:
+		 * 
+		 */
+		
 		double totalNeto = arcor.totalSueldoNeto();
-		assertEquals(totalNeto, 0);
+		assertEquals(totalNeto, 2135.0);
 		fail("Not yet implemented");
 	}
 

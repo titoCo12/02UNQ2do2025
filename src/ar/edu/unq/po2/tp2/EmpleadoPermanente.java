@@ -32,7 +32,7 @@ public class EmpleadoPermanente extends Empleado{
 	
 	@Override
 	public double obraSocial() {
-		return ((10/100) * this.sueldoBruto()) * this.cantHijos;
+		return ((10/100) * this.sueldoBruto()) + (20 * this.cantHijos);
 	}
 	
 	

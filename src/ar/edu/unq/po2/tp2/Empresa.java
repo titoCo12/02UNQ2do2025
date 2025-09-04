@@ -6,12 +6,14 @@ public class Empresa {
 
 	private String nombre;
 	private int CUIT;
-	private List<Empleado> empleados;
-	private List<Recibo> recibos;
+	private ArrayList<Empleado> empleados;
+	private ArrayList<Recibo> recibos;
 	
 	public Empresa(String nombre, int CUIT) {
 		this.nombre = nombre;
 		this.CUIT = CUIT;
+		this.empleados = new ArrayList<>();
+		this.recibos = new ArrayList <>();
 	}
 	
 	
@@ -66,11 +68,11 @@ public class Empresa {
 		return this.CUIT;
 	}
 	
-	public List<Empleado> getEmpleados() {
+	public ArrayList<Empleado> getEmpleados() {
 		return this.empleados;
 	}
 	
-	public List<Recibo> getRecibos() {
+	public ArrayList<Recibo> getRecibos() {
 		return this.recibos;
 	}
 }

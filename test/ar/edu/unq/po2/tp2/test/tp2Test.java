@@ -11,6 +11,9 @@ import org.junit.jupiter.api.Test;
 public class tp2Test {
 
 	private Empresa arcor;
+	private EmpleadoPermanente marcos;
+	private EmpleadoTemporal ariel;
+	private EmpleadoContratado maria;
 	
 	/*
 	 * SetUp
@@ -19,13 +22,13 @@ public class tp2Test {
 	@BeforeEach
 	public void SetUp() throws Exception{
 		
-		EmpleadoPermanente marcos = new EmpleadoPermanente("Marcos", "Quilmes", true, 
+		 marcos = new EmpleadoPermanente("Marcos", "Quilmes", true, 
 				LocalDate.of(2004, 06, 15), 2000.0, 10, 2);
 		
-		EmpleadoTemporal ariel = new EmpleadoTemporal("Ariel", "Varela", false, 
-				LocalDate.of(2020, 07, 10), 1200.0, LocalDate.of(2021, 02, 01), 3);
+		ariel = new EmpleadoTemporal("Ariel", "Varela", false, 
+				LocalDate.of(2002, 07, 10), 1200.0, LocalDate.of(2021, 02, 01), 3);
 		
-		EmpleadoContratado maria = new EmpleadoContratado("Maria", "Berazategui", true,
+		maria = new EmpleadoContratado("Maria", "Berazategui", true,
 				LocalDate.of(2022, 06, 02), 1600.0, 25612, "Efectivo");
 		
 		
@@ -37,24 +40,69 @@ public class tp2Test {
 	}
 	
 	/*
-	 * Tests para corroborar calculo total de sueldos 
-	 * y liquidacion de sueldos exitosa 
+	 * Test para corroborar calculo total de sueldos 
+	 * y liquidacion de sueldos  
 	 */
 	
 	@Test
 	public void testCalcularTotalDeNeto() {
 		
-		/* Totales esperados de cada empleado
+		/* Esperados de cada empleado
 		 *  
 		 * Marcos: 2135
-		 * Ariel:
-		 * Maria:
+		 * Ariel: 1065
+		 * Maria: 1550
+		 * 
+		 * Total : 4750
 		 * 
 		 */
 		
-		double totalNeto = arcor.totalSueldoNeto();
-		assertEquals(totalNeto, 2135.0);
-		fail("Not yet implemented");
-	}
+		double marcosNeto = marcos.sueldoNeto();
+		assertEquals(2135.0, marcosNeto);
+		System.out.println("Marcos tiene el sueldo neto esperado");
+		
+		
+		double arielNeto = ariel.sueldoNeto();
+		assertEquals(1065.0, arielNeto);
+		System.out.println("Ariel tiene el sueldo neto esperado");
 
+		
+		double mariaNeto = maria.sueldoNeto();
+		assertEquals(1550.0, mariaNeto);
+		System.out.println("Maria tiene el sueldo neto esperado");
+		
+		
+		double totalNeto = arcor.totalSueldoNeto();
+		assertEquals(4750.0, totalNeto);
+		System.out.println("El total de sueldo neto de la empresa es el esperado");
+
+		
+	}
+	
+	/*
+	 * Test para corroborar la liquidacion de sueldos
+	 */
+
+	@Test
+	public void testCalcularLiquidacionSueldos() {
+		
+		System.out.println("La empresa tiene " + arcor.getEmpleados().size()
+				+ " empleados");
+		
+		int cant = arcor.getRecibos().size();
+		assertEquals(0, cant);
+		System.out.println("Antes de la liquidacion, la empresa tiene " + cant 
+				+ " recibos");
+
+		arcor.liquidacionSueldos();
+		
+		cant = arcor.getRecibos().size();
+		assertEquals(3, cant);
+		System.out.println("Despues de la liquidacion, la empresa tiene " + cant 
+				+ " recibos");
+		
+		System.out.println("----------------------------------------------------");
+		
+	}
+	
 }

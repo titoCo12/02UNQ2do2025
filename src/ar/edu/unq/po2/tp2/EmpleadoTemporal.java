@@ -26,28 +26,34 @@ public class EmpleadoTemporal extends Empleado{
 	
 	@Override
 	public double aportesJubilatorios() {
-		return (10/100)*this.sueldoBruto() + (5 * this.horasExtra);
+		return (10.0/100.0)*this.sueldoBruto() + (5 * this.horasExtra);
 	}
 	
 	
 	@Override
 	public double obraSocial() {
-		double total = (10/100)*this.sueldoBruto();
-		if (Period.between(this.getFechaNacimiento(), LocalDate.now()).getYears() > 50) {
+		double total = (10.0/100.0)*this.sueldoBruto();
+		if (Period.between(this.getFechaNacimiento(), 
+				LocalDate.now()).getYears() > 50) {
 			total += 25;
 		}
 		return total;
 	}
 	
 	
+	public double horasExtra() {
+		return 50 * this.horasExtra;
+	}
+	
+	
 	@Override
 	public double sueldoBruto() {
-		return this.getSueldoBasico() + 50*this.horasExtra;
+		return this.getSueldoBasico() + this.horasExtra();
 	}
 	
 	@Override
 	public void agregarDesgloseConceptos(Recibo recibo) {
-		recibo.agregarConcepto(new Concepto("Horas extra", 50.0*this.horasExtra));
+		recibo.agregarConcepto(new Concepto("Horas extra", this.horasExtra()));
 	}
 	
 	

@@ -5,14 +5,15 @@ import java.time.*;
 
 public class EmpleadoPermanente extends Empleado{
 
-	private int cantHijos;
+	
 	private int antiguedad;
+	private int cantHijos;
 	
 	public EmpleadoPermanente(String nombre, String direccion, Boolean esConyuge, 
-			LocalDate fechaNacimiento, double sueldoBasico, int cantHijos, int antiguedad) {
+			LocalDate fechaNacimiento, double sueldoBasico, int antiguedad, int cantHijos) {
 		super(nombre, direccion, esConyuge, fechaNacimiento, sueldoBasico);
-		this.cantHijos = cantHijos;
 		this.antiguedad = antiguedad;
+		this.cantHijos = cantHijos;
 	}
 	
 
@@ -26,13 +27,13 @@ public class EmpleadoPermanente extends Empleado{
 	
 	@Override
 	public double aportesJubilatorios() {
-		return (15/100) * this.sueldoBruto();
+		return (15.0/100.0) * this.sueldoBruto();
 	}
 	
 	
 	@Override
 	public double obraSocial() {
-		return ((10/100) * this.sueldoBruto()) + (20 * this.cantHijos);
+		return ((10.0/100.0) * this.sueldoBruto()) + (20 * this.cantHijos);
 	}
 	
 	

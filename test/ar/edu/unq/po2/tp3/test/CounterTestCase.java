@@ -30,10 +30,28 @@ class CounterTestCase {
 	}
 	
 	
+	// Verificar la cantidad de pares y impares
 	
 	@Test
 	void testNumerosPares() {
-		assertEquals(counter.contarPares(), 1);;
+		assertEquals(1, counter.contarPares());
+		assertEquals(9, counter.contarImpares());
+	}
+	
+	
+	// Verificar la cantidad de multiplos de un numero (3)
+	
+	@Test
+	void testMultiplosDe() {
+		assertEquals(2,counter.multiplosDe(3));
 	}
 
+	
+	// Verificar el multiplo mas grande entre dos numeros (2, 9)
+	
+	@Test
+	void testMultiploMasGrandeDe() {
+		assertEquals(990 ,counter.multiploMasGrandeDe(2, 9));
+	}
+	
 }

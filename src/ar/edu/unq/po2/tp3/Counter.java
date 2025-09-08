@@ -14,6 +14,11 @@ public class Counter {
 	}
 	
 	
+	public boolean esPar(Integer n) {
+		return n % 2 == 0;
+	}
+	
+	
 	public Integer contarPares() {
 		Integer count = 0;
 		for (Integer num:this.numeros) {
@@ -36,19 +41,14 @@ public class Counter {
 	}
 	
 	
-	public Integer multiplosDe(Integer multiplo) {
+	public Integer multiplosDe(Integer numero) {
 		Integer count = 0;
 		for (Integer num:this.numeros) {
-			if (num % multiplo == 0) {
+			if (num % numero == 0) {
 				count++;
 			}
 		}
 		return count;
-	}
-	
-	
-	public boolean esPar(Integer n) {
-		return n % 2 == 0;
 	}
 	
 	
@@ -61,10 +61,10 @@ public class Counter {
 		Integer curr = n;
 		
 		while (curr != 0) {
-			if(this.esPar(curr % 10) && (curr % 10 != 0)) {
+			if(this.esPar(curr % 10)) {
 				count++;
 			}
-			curr = curr / 10;
+			curr /= 10;
 		}
 		return count;
 	}
@@ -76,8 +76,9 @@ public class Counter {
 		Integer max = 0;
 		
 		for (Integer n:numeros) {
-			if (contarDigitosPares(n) > max) {
+			if (this.contarDigitosPares(n) > max) {
 				curr = n;
+				max = this.contarDigitosPares(n);
 			}
 		}
 		return curr;

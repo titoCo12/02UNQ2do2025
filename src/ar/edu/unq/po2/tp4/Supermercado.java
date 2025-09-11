@@ -34,4 +34,12 @@ public class Supermercado {
 		return total;
 	}
 	
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+	
+	public String getDireccion() {
+		return this.direccion;
+	}
 }

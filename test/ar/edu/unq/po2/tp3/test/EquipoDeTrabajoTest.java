@@ -15,8 +15,6 @@ class EquipoDeTrabajoTest {
 	private Persona marcos;
 	private Persona ariel;
 	private Persona maria;
-	private Persona jorge;
-	private Persona rocio;
 	
 	
 	@BeforeEach
@@ -25,8 +23,6 @@ class EquipoDeTrabajoTest {
 		marcos = new Persona("Marcos", LocalDate.of(2004, 06, 15)); // 21
 		ariel = new Persona("Ariel", LocalDate.of(2000, 06, 15));   // 25
 		maria = new Persona("Maria", LocalDate.of(1990, 06, 15));   // 35
-		jorge = new Persona("Jorge", LocalDate.of(1998, 06, 15));   // 27
-		rocio = new Persona("Rocio", LocalDate.of(1976, 06, 15));   // 49 
 		
 		equipo = new EquipoDeTrabajo("Equipazo", new ArrayList<>());
 		equipo.agregarIntegrante(marcos);

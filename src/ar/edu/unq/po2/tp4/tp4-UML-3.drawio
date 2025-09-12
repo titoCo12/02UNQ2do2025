@@ -1,0 +1,54 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
+  <diagram name="Page-1" id="AMpSsGtXAhJQIXz59sIY">
+    <mxGraphModel dx="775" dy="485" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-1" value="Ingreso" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="370" y="210" width="200" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-2" value="&lt;div&gt;-mes: int&lt;/div&gt;-concepto: String&lt;div&gt;-monto: double&lt;/div&gt;" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="HwutHJJMcXpLNwZWFz0x-1">
+          <mxGeometry y="29" width="200" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-3" value="+new(int, String, double)&lt;div&gt;+getMes(): int&lt;/div&gt;&lt;div&gt;+getConcepto(): int&lt;/div&gt;&lt;div&gt;+getMonto(): double&lt;/div&gt;&lt;div&gt;+getMontoImponible(): double&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="HwutHJJMcXpLNwZWFz0x-1">
+          <mxGeometry y="90" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-4" value="IngresoPorHorasExtra" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="370" y="460" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-5" value="&lt;div&gt;-horasExtra: int&lt;/div&gt;" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="HwutHJJMcXpLNwZWFz0x-4">
+          <mxGeometry y="29" width="200" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-6" value="+new(int, String, double, int)&lt;div&gt;+getMontoImponible(): double&lt;br&gt;&lt;div&gt;+getHorasExtra(): int&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="HwutHJJMcXpLNwZWFz0x-4">
+          <mxGeometry y="70" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=block;endFill=0;endSize=10;" edge="1" parent="1" source="HwutHJJMcXpLNwZWFz0x-4" target="HwutHJJMcXpLNwZWFz0x-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-8" value="extends" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HwutHJJMcXpLNwZWFz0x-7">
+          <mxGeometry x="-0.4408" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-9" value="Trabajador" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="210" width="180" height="166" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-10" value="-nombre: String" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="HwutHJJMcXpLNwZWFz0x-9">
+          <mxGeometry y="29" width="180" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-11" value="+new(String)&lt;div&gt;+getNombre(): String&lt;/div&gt;&lt;div&gt;+agregarIngreso(Ingreso): void&lt;/div&gt;&lt;div&gt;+getTotalPercibido(): double&lt;/div&gt;&lt;div&gt;+getMontoImponible(): double&lt;/div&gt;&lt;div&gt;+getImpuestoAPagar(): double&lt;/div&gt;" style="text;html=1;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="HwutHJJMcXpLNwZWFz0x-9">
+          <mxGeometry y="70" width="180" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.014;entryY=0.328;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HwutHJJMcXpLNwZWFz0x-10" target="HwutHJJMcXpLNwZWFz0x-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-13" value="ingresosAnuales" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="227" y="232" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HwutHJJMcXpLNwZWFz0x-14" value="*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="331" y="234" width="30" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -35,7 +35,7 @@ public class Caja {
 	public double registrarPagos() {
 		double total = 0;
 		for (Item i:itemsEnCaja) {
-			total += i.montoAPagar(this);
+			total += i.registrarCobro(this);
 		}
 		itemsEnCaja.clear();
 		return total;

@@ -11,7 +11,7 @@ public class Producto implements Item{
 		this.precioBase = precioBase;
 	}
 	
-	public double montoAPagar(Caja caja) {
+	public double registrarCobro(Caja caja) {
 		caja.reducirStock(this);
 		return this.precioBase;
 	}

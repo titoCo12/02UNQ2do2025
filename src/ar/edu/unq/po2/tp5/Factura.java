@@ -11,7 +11,7 @@ public abstract class Factura implements Item {
 	
 	public abstract double valor();
 	
-	public double montoAPagar(Caja caja) {
+	public double registrarCobro(Caja caja) {
 		caja.notificarAgencia(this);
 		return this.valor();
 	}

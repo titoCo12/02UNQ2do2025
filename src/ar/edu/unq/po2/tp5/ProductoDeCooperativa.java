@@ -7,7 +7,7 @@ public class ProductoDeCooperativa extends Producto{
 	}
 	
 	public double montoAPagar(Caja c) {
-		return super.montoAPagar(c) * 0.9;
+		return super.registrarCobro(c) * 0.9;
 	}
 	
 	

@@ -87,5 +87,29 @@ class CartaTest {
 		assertEquals(diamante, "D");
 		assertEquals(corazon, "C");
 	}
+	
+	
+	void testMayorValor() {
+		
+		//Excercise 
+		boolean casoSi = c10.esMayorQue(c5);
+		boolean casoNo = c2.esMayorQue(c4);
+		
+		//Verify
+		assertEquals(casoSi, true);
+		assertEquals(casoNo, false);
+	}
 
+	
+	void testMismoPalo() {
+		
+		//Excercise 
+		boolean casoSi = c1.tieneMismoPaloQue(c4);
+		boolean casoNo = c5.tieneMismoPaloQue(c8);
+	
+		//Verify
+		assertEquals(casoSi, true);
+		assertEquals(casoNo, false);
+		
+	}
 }

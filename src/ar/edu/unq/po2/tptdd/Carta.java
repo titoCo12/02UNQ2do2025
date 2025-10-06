@@ -18,5 +18,12 @@ public class Carta {
 		return this.palo;
 	}
 	
+	public boolean esMayorQue(Carta c) {
+		return this.valor > c.getValor();
+	}
+	
+	public boolean tieneMismoPaloQue(Carta c) {
+		return this.palo == c.getPalo();
+	}
 	
 }

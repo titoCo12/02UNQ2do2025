@@ -37,11 +37,11 @@ public class PokerStatus {
        if (contador.values().stream().anyMatch(cant -> cant == 4)) {
     	   return "Poker";
        }
-       if (palos.size() == 1) { 
-    	   return "Color";
-       }
        if (contador.values().stream().anyMatch(count -> count == 3)) {
     	   return "Trio";
+       }
+       if (palos.size() == 1) { 
+    	   return "Color";
        }
        
        return "Nada";

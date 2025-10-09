@@ -1,25 +1,26 @@
 package ar.edu.unq.po2.tptdd;
 
+
 public class Carta {
 
-	private int valor;
-	private String palo;
+	private ValorCarta valor;
+	private PaloCarta palo;
 	
-	public Carta(int val, String palo) {
+	public Carta(ValorCarta val, PaloCarta palo) {
 		this.valor = val;
 		this.palo = palo;
 	}
 	
-	public int getValor() {
+	public ValorCarta getValor() {
 		return this.valor;
 	}
 	
-	public String getPalo() {
+	public PaloCarta getPalo() {
 		return this.palo;
 	}
 	
 	public boolean esMayorQue(Carta c) {
-		return this.valor > c.getValor();
+		return this.valor.ordinal() > c.getValor().ordinal();
 	}
 	
 	public boolean tieneMismoPaloQue(Carta c) {

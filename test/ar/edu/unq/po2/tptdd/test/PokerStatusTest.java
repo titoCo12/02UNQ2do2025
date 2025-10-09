@@ -31,22 +31,22 @@ public class PokerStatusTest {
 	void testVerificarManoConPoker() {
 		
 		//Setup
-		when(c1.getValor()).thenReturn(5);
-		when(c1.getPalo()).thenReturn("P");
-		when(c2.getValor()).thenReturn(7);
-		when(c2.getPalo()).thenReturn("P");
-		when(c3.getValor()).thenReturn(7);
-		when(c3.getPalo()).thenReturn("C");
-		when(c4.getValor()).thenReturn(7);
-		when(c4.getPalo()).thenReturn("D");
-		when(c5.getValor()).thenReturn(7);
-		when(c5.getPalo()).thenReturn("T");
+		when(c1.getValor()).thenReturn(ValorCarta.CINCO);
+		when(c1.getPalo()).thenReturn(PaloCarta.PICAS);
+		when(c2.getValor()).thenReturn(ValorCarta.SIETE);
+		when(c2.getPalo()).thenReturn(PaloCarta.PICAS);
+		when(c3.getValor()).thenReturn(ValorCarta.SIETE);
+		when(c3.getPalo()).thenReturn(PaloCarta.CORAZONES);
+		when(c4.getValor()).thenReturn(ValorCarta.SIETE);
+		when(c4.getPalo()).thenReturn(PaloCarta.DIAMANTES);
+		when(c5.getValor()).thenReturn(ValorCarta.SIETE);
+		when(c5.getPalo()).thenReturn(PaloCarta.TREBOLES);
 			
 		//Exercise
-		String poker7 = pokerStatus.verificar(c1, c2, c3, c4, c5);
+		Jugada poker7 = pokerStatus.verificar(c1, c2, c3, c4, c5);
 		
 		//Verify
-		assertEquals(poker7, "Poker");
+		assertEquals(poker7.getTipo(), TipoMano.POKER);
 		
 		//En este caso no hay Teardown manual por asi decirlo (cerrar archivos o conexiones)
 	}
@@ -56,22 +56,22 @@ public class PokerStatusTest {
 	void testVerificarManosConTrio() { 
 
 		//Setup
-		when(c1.getValor()).thenReturn(7);
-		when(c1.getPalo()).thenReturn("P");
-		when(c2.getValor()).thenReturn(7);
-		when(c2.getPalo()).thenReturn("T");
-		when(c3.getValor()).thenReturn(5);
-		when(c3.getPalo()).thenReturn("P");
-		when(c4.getValor()).thenReturn(10);
-		when(c4.getPalo()).thenReturn("P");
-		when(c5.getValor()).thenReturn(7);
-		when(c5.getPalo()).thenReturn("C");
+		when(c1.getValor()).thenReturn(ValorCarta.SIETE);
+		when(c1.getPalo()).thenReturn(PaloCarta.PICAS);
+		when(c2.getValor()).thenReturn(ValorCarta.SIETE);
+		when(c2.getPalo()).thenReturn(PaloCarta.TREBOLES);
+		when(c3.getValor()).thenReturn(ValorCarta.CINCO);
+		when(c3.getPalo()).thenReturn(PaloCarta.PICAS);
+		when(c4.getValor()).thenReturn(ValorCarta.DIEZ);
+		when(c4.getPalo()).thenReturn(PaloCarta.PICAS);
+		when(c5.getValor()).thenReturn(ValorCarta.SIETE);
+		when(c5.getPalo()).thenReturn(PaloCarta.CORAZONES);
 		
 		//Exercise
-		String trio7 = pokerStatus.verificar(c1,c2,c3,c4,c5);
+		Jugada trio7 = pokerStatus.verificar(c1,c2,c3,c4,c5);
 		
 		//Verify
-		assertEquals(trio7, "Trio");
+		assertEquals(trio7.getTipo(), TipoMano.TRIO);
 	
 		//En este caso no hay Teardown manual por asi decirlo (cerrar archivos o conexiones)
 	}
@@ -81,22 +81,22 @@ public class PokerStatusTest {
 	void testVerificarManosConColor() { 
 		
 		//Setup
-		when(c1.getValor()).thenReturn(7);
-		when(c1.getPalo()).thenReturn("P");
-		when(c2.getValor()).thenReturn(2);
-		when(c2.getPalo()).thenReturn("P");
-		when(c3.getValor()).thenReturn(5);
-		when(c3.getPalo()).thenReturn("P");
-		when(c4.getValor()).thenReturn(10);
-		when(c4.getPalo()).thenReturn("P");
-		when(c5.getValor()).thenReturn(6);
-		when(c5.getPalo()).thenReturn("P");
+		when(c1.getValor()).thenReturn(ValorCarta.SIETE);
+		when(c1.getPalo()).thenReturn(PaloCarta.PICAS);
+		when(c2.getValor()).thenReturn(ValorCarta.DOS);
+		when(c2.getPalo()).thenReturn(PaloCarta.PICAS);
+		when(c3.getValor()).thenReturn(ValorCarta.CINCO);
+		when(c3.getPalo()).thenReturn(PaloCarta.PICAS);
+		when(c4.getValor()).thenReturn(ValorCarta.DIEZ);
+		when(c4.getPalo()).thenReturn(PaloCarta.PICAS);
+		when(c5.getValor()).thenReturn(ValorCarta.SEIS);
+		when(c5.getPalo()).thenReturn(PaloCarta.PICAS);
 		
 		//Exercise
-		String colorP = pokerStatus.verificar(c1,c2,c3,c4,c5);
+		Jugada colorP = pokerStatus.verificar(c1,c2,c3,c4,c5);
 		
 		//Verify
-		assertEquals(colorP, "Color");
+		assertEquals(colorP.getTipo(), TipoMano.COLOR);
 		
 		//En este caso no hay Teardown manual por asi decirlo (cerrar archivos o conexiones)
 	}
@@ -106,22 +106,22 @@ public class PokerStatusTest {
 	void testVerificarManosConNada() {
 		
 		//Setup
-		when(c1.getValor()).thenReturn(7);
-		when(c1.getPalo()).thenReturn("P");
-		when(c2.getValor()).thenReturn(7);
-		when(c2.getPalo()).thenReturn("T");
-		when(c3.getValor()).thenReturn(2);
-		when(c3.getPalo()).thenReturn("P");
-		when(c4.getValor()).thenReturn(8);
-		when(c4.getPalo()).thenReturn("C");
-		when(c5.getValor()).thenReturn(3);
-		when(c5.getPalo()).thenReturn("P");
+		when(c1.getValor()).thenReturn(ValorCarta.SIETE);
+		when(c1.getPalo()).thenReturn(PaloCarta.PICAS);
+		when(c2.getValor()).thenReturn(ValorCarta.SIETE);
+		when(c2.getPalo()).thenReturn(PaloCarta.TREBOLES);
+		when(c3.getValor()).thenReturn(ValorCarta.DOS);
+		when(c3.getPalo()).thenReturn(PaloCarta.PICAS);
+		when(c4.getValor()).thenReturn(ValorCarta.OCHO);
+		when(c4.getPalo()).thenReturn(PaloCarta.CORAZONES);
+		when(c5.getValor()).thenReturn(ValorCarta.TRES);
+		when(c5.getPalo()).thenReturn(PaloCarta.PICAS);
 		
 		//Exercise
-		String casoNada = pokerStatus.verificar(c1,c2,c3,c4,c5);
+		Jugada casoNada = pokerStatus.verificar(c1,c2,c3,c4,c5);
 		
 		//Verify
-		assertEquals(casoNada, "Nada");
+		assertEquals(casoNada.getTipo(), TipoMano.NADA);
 		
 		//En este caso no hay Teardown manual por asi decirlo (cerrar archivos o conexiones)	
 	}

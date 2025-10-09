@@ -21,30 +21,31 @@ public class PokerStatus {
     }
     */
 	
-	public String verificar(Carta c1, Carta c2, Carta c3, Carta c4, Carta c5) {
+	public Jugada verificar(Carta c1, Carta c2, Carta c3, Carta c4, Carta c5) {
         List<Carta> cartas = Arrays.asList(c1, c2, c3, c4, c5);
         
-        Map<Integer, Integer> contador = new HashMap<>();
-        Set<String> palos = new HashSet<String>();
+        Map<ValorCarta, Integer> contador = new HashMap<>();
+        Set<PaloCarta> palos = new HashSet<PaloCarta>();
+        int valorTotal = 0;
         
         for (Carta c : cartas) {
-            int valor = c.getValor();
-            String palo = c.getPalo();
+        	ValorCarta valor = c.getValor();
             contador.put(valor, contador.getOrDefault(valor, 0) + 1);
-            palos.add(palo);
+            valorTotal += valor.ordinal();
+            palos.add(c.getPalo());
         }
         
        if (contador.values().stream().anyMatch(cant -> cant == 4)) {
-    	   return "Poker";
-       }
-       if (contador.values().stream().anyMatch(count -> count == 3)) {
-    	   return "Trio";
+    	   return new Jugada(valorTotal, TipoMano.POKER);
        }
        if (palos.size() == 1) { 
-    	   return "Color";
+    	   return new Jugada(valorTotal, TipoMano.COLOR);
+       }
+       if (contador.values().stream().anyMatch(count -> count == 3)) {
+    	   return new Jugada(valorTotal, TipoMano.TRIO);
        }
        
-       return "Nada";
+       return new Jugada(valorTotal, TipoMano.NADA);
     }
 	
 }

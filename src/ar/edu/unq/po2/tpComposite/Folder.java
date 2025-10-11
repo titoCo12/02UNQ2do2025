@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tptdd;
+package ar.edu.unq.po2.tpComposite;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
